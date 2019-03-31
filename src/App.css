@@ -1,3 +1,8 @@
+@import './search/styles/main.css';
+
 .app {
-    background: green;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
