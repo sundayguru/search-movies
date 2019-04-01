@@ -4,42 +4,56 @@
     justify-content: center;
     margin-bottom: 30px;
 }
-
 .search-box {
     height: 70px;
     width: 100%;
     text-align: center;
 }
-
 .search-results {
     width: 100%;
 }
-
 .card {
-    width: calc(100% / 4 - 60px);
+    width: calc(100% / 5 - 60px);
     float: left;
     height: 300px;
-    border: 1px solid grey;
+    border-radius: 12px;
     padding: 20px;
     margin: 5px;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
 }
-
-.card-image {
-    height: 150px;
-    background: gray;
+.card-info {
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 18px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    width: 100%;
 }
-
+.card-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: green;
+    border-radius: 6px;
+    color: white;
+}
+.card-title {
+    font-size: 20px;
+    color: white;
+}
 .result-info {
     padding-left: 20px;
     color: #afafaf;
 }
-
 .card-expanded {
     width: calc(100% / 2 - 60px);
     height: 700px;
 }
 
-.card-expanded .card-image {
-    height: 400px;
-}

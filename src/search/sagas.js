@@ -6,9 +6,7 @@ import * as Types from './redux/actionTypes';
 
 function* getMovies() {
     try {
-        console.log("LOADING")
         const response = yield call(Api.getMovies);
-        console.log("RESP", response)
         yield put(Actions.getMoviesSuccess(response));
     } catch (error) {
         yield put(Actions.getMoviesFailure(error));

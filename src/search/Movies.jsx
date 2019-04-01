@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import {bindActionCreators} from 'redux'
 import MovieCard from  "./MovieCard"
 import {getMovies} from './redux/actions'
+import BubbleLoading from '../common/BubbleLoading'
 
 
 class Movies extends React.Component {
@@ -10,20 +11,19 @@ class Movies extends React.Component {
         this.props.getMovies();
     }
     render() {
-        const {isFetching} = this.props.movies;
+        const {isFetching, results, totalResults} = this.props.movies;
         console.log("isFetching", isFetching)
         console.log("MOVIE", this.props.movies)
         return (
             <div className="search-results">
                 <div className="result-info">
-                    <p><i>Showing: 1 / 20</i></p>
+                    <p><i>Showing: {results.length} / {totalResults}</i></p>
                 </div>
+                <BubbleLoading loading={isFetching}/>
                 <div>
-                    {isFetching && "Loading Movies"}
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
+                    {results.map((movie, index) =>{
+                        return <MovieCard movie={movie} key={index} />
+                    })}
                 </div>
                
             </div>

@@ -1,15 +1,17 @@
 import React from 'react'
 
-const SearchBox = () => (
-    <div className="card">
-        <div className="card-image"></div>
-        <h2>Movie title</h2>
-        <div className="card-info">
-            <p>Rating: 18+</p>
-            <p>Released: 22-12-2018</p>
-        </div>
-    </div>
-)
 
-
-export default SearchBox
+export default class MovieCard extends React.Component {
+    render() {
+        const {movie} = this.props;
+        return (
+            <div className="card" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.posterPath})`}}>
+                <span className="card-label">{movie.adult ? '18+' : 'G'}</span>        
+                <div className="card-info">
+                    <h2 className="card-title">{movie.title}</h2>
+                    <p>Released: {movie.releaseDate}</p>
+                </div>
+            </div>
+        )
+    }
+}
