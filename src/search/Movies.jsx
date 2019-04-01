@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from "react-redux"
 import {bindActionCreators} from 'redux'
 import MovieCard from  "./MovieCard"
-import {getMovies} from './redux/actions'
+import {getMovies, expandCard} from './redux/actions'
 import BubbleLoading from '../common/BubbleLoading'
 
 
@@ -11,8 +11,7 @@ class Movies extends React.Component {
         this.props.getMovies();
     }
     render() {
-        const {isFetching, results, totalResults} = this.props.movies;
-        console.log("isFetching", isFetching)
+        const {isFetching, results, totalResults, expanded} = this.props.movies;
         console.log("MOVIE", this.props.movies)
         return (
             <div className="search-results">
@@ -22,7 +21,7 @@ class Movies extends React.Component {
                 <BubbleLoading loading={isFetching}/>
                 <div>
                     {results.map((movie, index) =>{
-                        return <MovieCard movie={movie} key={index} />
+                        return <MovieCard movie={movie} expanded={expanded} expandCard={this.props.expandCard} key={index} />
                     })}
                 </div>
                
@@ -38,7 +37,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({getMovies}, dispatch)
+    return bindActionCreators({getMovies, expandCard}, dispatch)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies)

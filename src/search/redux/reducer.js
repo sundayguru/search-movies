@@ -1,8 +1,9 @@
-import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE } from "./actionTypes";
+import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE, EXPAND_CARD } from "./actionTypes";
 
 const initialState = {
     totalPages: 0,
     totalResults: 0,
+    expanded: {},
     name: '',
     search: '',
     results: [],
@@ -24,6 +25,13 @@ export default function(state = initialState, action) {
                 ...state,
                 isFetching: false,
                 ...action.response
+            }
+        }
+
+        case EXPAND_CARD: {
+            return {
+                ...state,
+                expanded: {[action.id]: !state.expanded[action.id]}
             }
         }
 

@@ -1,4 +1,4 @@
-import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE } from "./actionTypes";
+import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE, EXPAND_CARD } from "./actionTypes";
 
 
 export const getMovies = () => ({
@@ -13,4 +13,9 @@ export const getMoviesSuccess = (response) => ({
 export const getMoviesFailure = (error) => ({
     type: GET_MOVIES_FAILURE,
     error
+});
+
+export const expandCard = (id) => ({
+    type: EXPAND_CARD,
+    id
 });
