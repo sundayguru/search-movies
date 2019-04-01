@@ -12,7 +12,7 @@ module.exports = {
         publicPath: "/dist/",
         filename: 'bundle.js',
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
+    resolve: { extensions: ["*", ".js", ".json",".jsx"] },
     devtool: 'source-map',
     devServer: {
         inline: true,
