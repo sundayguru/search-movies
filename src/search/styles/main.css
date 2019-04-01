@@ -1,7 +1,5 @@
 .search-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
     margin-bottom: 30px;
 }
 .search-box {
@@ -67,3 +65,6 @@
     display: block;
 }
 
+.react-autosuggest__container {
+    width: 100%;
+}

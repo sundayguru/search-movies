@@ -14,31 +14,33 @@ class Movies extends React.Component {
         super()
         this.loadMore = this.loadMore.bind(this)
     }
+
     componentDidMount () {
         this.props.getMovies();
     }
+
     loadMore (isVisible) {
         const {page, totalPages} = this.props.movies;
-        console.log("LOAD MORE", isVisible)
         if (isVisible && page !== totalPages) {
             this.props.loadMore(page + 1)
         }
     }
+
     render() {
         const {isFetching, results, totalResults, expanded, search} = this.props.movies;
         let movies = results
         if (search) {
             movies = results.filter((movie) => {
-                        if (movie.title.toLowerCase().indexOf(search) > -1) {
+                        if (movie.title.toLowerCase().indexOf(search.toLowerCase()) > -1) {
                             return true;
                         }
                         return false
                     })
         }
-        console.log("MOVIE", this.props.movies)
+
         return (
             <div>
-                <SearchBox filterResult={this.props.filterResult} search={search}/>
+                <SearchBox filterResult={this.props.filterResult} search={search} movies={results} />
                 <div className="search-results">
                     <div className="result-info">
                         <p><i>Showing: {movies.length} / {totalResults}</i></p>
