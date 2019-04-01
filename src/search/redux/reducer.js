@@ -47,6 +47,13 @@ export default function(state = initialState, action) {
             }
         }
 
+        case Types.FILTER_RESULTS: {
+            return {
+                ...state,
+                search: action.search
+            }
+        }
+
         case Types.GET_MOVIES_FAILURE:
         case Types.LOAD_MORE_FAILURE:
         {

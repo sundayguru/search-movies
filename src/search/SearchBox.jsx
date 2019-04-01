@@ -1,8 +1,10 @@
 import React from 'react'
 
-const SearchBox = () => (
+const SearchBox = ({filterResult, search}) => (
     <div className="search-container">
-        <input type="text" className="search-box" placeholder="Enter movie name..." />
+        <input type="text" className="search-box" placeholder="Enter movie name..." onChange={(e) => {
+            filterResult(e.target.value)
+        }} value={search} />
     </div>
 )
 

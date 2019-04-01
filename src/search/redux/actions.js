@@ -34,3 +34,8 @@ export const expandCard = (id) => ({
     type: Types.EXPAND_CARD,
     id
 });
+
+export const filterResult = (search) => ({
+    type: Types.FILTER_RESULTS,
+    search
+});
