@@ -1,4 +1,4 @@
-import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE, EXPAND_CARD } from "./actionTypes";
+import * as Types from './actionTypes'
 
 const initialState = {
     totalPages: 0,
@@ -13,29 +13,43 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case GET_MOVIES: {
+        case Types.GET_MOVIES:
+        case Types.LOAD_MORE:
+        {
             return {
                 ...state,
                 isFetching: true
             }
         }
 
-        case GET_MOVIES_SUCCESS: {
+        case Types.GET_MOVIES_SUCCESS:
+        {
             return {
                 ...state,
                 isFetching: false,
                 ...action.response
             }
         }
+        case Types.LOAD_MORE_SUCCESS:
+        {
+            return {
+                ...state,
+                isFetching: false,
+                page: action.response.page,
+                results: [...state.results, ...action.response.results],
+            }
+        }
 
-        case EXPAND_CARD: {
+        case Types.EXPAND_CARD: {
             return {
                 ...state,
                 expanded: {[action.id]: !state.expanded[action.id]}
             }
         }
 
-        case GET_MOVIES_FAILURE: {
+        case Types.GET_MOVIES_FAILURE:
+        case Types.LOAD_MORE_FAILURE:
+        {
             return {
                 ...state,
                 isFetching: false,

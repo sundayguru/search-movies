@@ -38,6 +38,7 @@
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.2",
     "react-redux": "^6.0.1",
+    "react-visibility-sensor": "^5.0.2",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
     "redux-thunk": "^2.3.0"

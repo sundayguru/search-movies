@@ -1,21 +1,36 @@
-import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FAILURE, EXPAND_CARD } from "./actionTypes";
+import * as Types from './actionTypes';
 
 
 export const getMovies = () => ({
-    type: GET_MOVIES
+    type: Types.GET_MOVIES
 });
 
 export const getMoviesSuccess = (response) => ({
-    type: GET_MOVIES_SUCCESS,
+    type: Types.GET_MOVIES_SUCCESS,
     response
 });
 
 export const getMoviesFailure = (error) => ({
-    type: GET_MOVIES_FAILURE,
+    type: Types.GET_MOVIES_FAILURE,
+    error
+});
+
+export const loadMore = (page) => ({
+    type: Types.LOAD_MORE,
+    page
+});
+
+export const loadMoreSuccess = (response) => ({
+    type: Types.LOAD_MORE_SUCCESS,
+    response
+});
+
+export const loadMoreFailure = (error) => ({
+    type: Types.LOAD_MORE_FAILURE,
     error
 });
 
 export const expandCard = (id) => ({
-    type: EXPAND_CARD,
+    type: Types.EXPAND_CARD,
     id
 });
