@@ -65,3 +65,5 @@ typings/
 
 # bundle
 dist/
+
+config/settings.json
