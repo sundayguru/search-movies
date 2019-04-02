@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> 1`] = `
+<div
+  className="search-container"
+>
+  <span>
+    <input
+      className="search-box"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Enter movie title..."
+      value=""
+    />
+  </span>
+</div>
+`;

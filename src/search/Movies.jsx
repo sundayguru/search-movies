@@ -8,8 +8,7 @@ import BubbleLoading from '../common/BubbleLoading'
 import SearchBox from  "./SearchBox";
 
 
-
-class Movies extends React.Component {
+export class Movies extends React.Component {
     constructor() {
         super()
         this.loadMore = this.loadMore.bind(this)

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> 1`] = `
+<span>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    value=""
+  />
+</span>
+`;

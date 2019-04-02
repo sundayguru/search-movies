@@ -6,7 +6,6 @@ const MovieCard = ({movie, expanded, expandCard}) => (
         className={expanded[movie.id] ? "card card-expanded" : "card"} 
         style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.posterPath})`}}
         onClick={() => {
-            console.log("expand", movie.id, expanded)
             expandCard(movie.id)
         }}>
         <span className="card-label">{movie.adult ? '18+' : 'G'}</span>        
