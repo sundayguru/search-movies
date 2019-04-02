@@ -3,7 +3,7 @@ Your number one movies directory
 
 
 ## Prerequisites
-This project requires Node and Node package manager. Get the latest version of (Node)[https://nodejs.org/en/] from their official website
+This project requires Node and Node package manager. Get the latest version of [Node](https://nodejs.org/en/) from their official website
 
 
 ## Installation
@@ -12,7 +12,7 @@ This project requires Node and Node package manager. Get the latest version of (
 * Change to root directory `cd search-movies`
 * Install all dependencies `npm install`
 * Copy and configure settings `cp config/settings.example.json  config/settings.json`
-* Open config/settings.json file and update `apiKey` to a valid themoviedb.org api key. You can use `f3a05026119d09f84c9aaef927a18ac2` for testing purpose.
+* Open config/settings.json file and update `apiKey` to a valid [themoviedb.org](http://themoviedb.org) api key. You can use `f3a05026119d09f84c9aaef927a18ac2` for testing purpose.
 * Run the server `npm run dev`
 * Visit http://localhost:9000 to see application in action
 

@@ -6,6 +6,7 @@
     height: 70px;
     width: 100%;
     text-align: center;
+    border: 1px solid #d4d4d4;
 }
 .search-results {
     width: 100%;
@@ -68,3 +69,13 @@
 .react-autosuggest__container {
     width: 100%;
 }
+
+@media all and (max-width: 1024px) {
+    .card {
+        width: calc(100% / 2 - 60px);
+    }
+    .card-info {
+        padding-left: 10px;
+    }
+}
+
